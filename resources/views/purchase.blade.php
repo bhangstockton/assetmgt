@@ -35,11 +35,11 @@
 				</ul>
 				<!-- Tab Content -->
 				<div class="tab-content">
-					<div id='tc_list_purchase' class="tab-pane">
+					<div id='tc_list_purchase' class="tab-pane active">
 						This is where the list shows.
 					</div>
 					<!-- /.tab-pane -->
-					<div id='tc_add_po' class="tab-pane active">
+					<div id='tc_add_po' class="tab-pane">
 						<!-- TEXT: PO Reference No. -->
 						<div class='form-group'>
 							<div class="row">
