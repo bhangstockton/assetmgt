@@ -44,7 +44,6 @@
 						            <td style="border-top: 0px !important;"><b>ID</b></td>
 						            <td style="border-top: 0px !important;"><b>Supplier Name</b></td>
 						            <td style="border-top: 0px !important;"><b>Address</b></td>
-						            <td class='text-center' style="width: 7%; border-top: 0px !important;"><b><i class="fa fa-bolt"></i> </b></td>
 						        </tr>
 						        <!-- rows -->
 								@foreach ($suppliers as $supplier)

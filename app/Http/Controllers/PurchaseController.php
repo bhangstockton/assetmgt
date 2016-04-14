@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Purchase_order;
 
 class PurchaseController extends Controller
 {
@@ -15,7 +16,9 @@ class PurchaseController extends Controller
      */
     public function index()
     {
-        return view('purchase');
+        $data['porders'] = Purchase_order::all();
+
+        return view('purchase', $data);
     }
 
     /**
@@ -36,7 +39,13 @@ class PurchaseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $purchase_order = new Purchase_order;
+
+        $purchase_order->remarks = $request->remarks;
+
+        $purchase_order->save();
+
+        return redirect()->back();
     }
 
     /**
