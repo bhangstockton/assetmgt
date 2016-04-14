@@ -44,6 +44,7 @@
 						            <td style="border-top: 0px !important;"><b>ID</b></td>
 						            <td style="border-top: 0px !important;"><b>Reference No.</b></td>
 						            <td style="border-top: 0px !important;"><b>Date Requested</b></td>
+						            <td style="border-top: 0px !important;"><b>Requesting Personnel</b></td> 
 						            <td style="border-top: 0px !important;"><b>Approving Personel</b></td>
 						            <td style="border-top: 0px !important;"><b>Date Approved</b></td>
 						            <td style="border-top: 0px !important;"><b>Remarks</b></td>
