@@ -21,5 +21,6 @@ Route::group(['middleware' => 'web'], function() {
 	Route::resource('/office','OfficesController');
 	Route::resource('/employees','EmployeesController');
 	Route::resource('/purchase','PurchaseController');
+	Route::resource('/po_details', 'PODetailsController');
 
 });

@@ -99,6 +99,7 @@
 			<li id='pageid'><a href="{{ url('/office') }}"><i class="fa fa-institution"></i> <span>Offices</span> </a></li>
 			<li id='pageid'><a href="{{ url('/employees') }}"><i class="fa fa-users"></i> <span>Employees</span> </a></li>
 			<li id='pageid'><a href="{{ url('/purchase') }}"><i class="fa fa-folder"></i> <span>Purchase Order</span> </a></li>
+			<li id='pageid'><a href="{{ url('/po_details') }}"><i class="fa fa-folder"></i> <span>Purchase Order Details</span> </a></li>
 			<li><a href="{{ url('bower_components/adminlte/index.html') }}"><i class="fa fa-link"></i> <span>AdminLTE Template</span></a></li>
 
 		</ul>
