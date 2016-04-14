@@ -8,5 +8,8 @@ use App\Http\Requests;
 
 class PODetailsController extends Controller
 {
-    //
+    function __construct()
+    {
+    	$this->middleware('auth');
+    }
 }
