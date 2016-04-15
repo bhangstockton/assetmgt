@@ -10,7 +10,7 @@
 <div class="login-box">
 
 	<div class="login-logo" style='line-height: 0.6;'>
-		<b>Workflow</b>MS&reg;<br>
+		<b>Asset</b>MS&reg;<br>
 		<span style='font-size: 16px;'>for Philippine National Railways</span>
 	</div>
 	<div>
