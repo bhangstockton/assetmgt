@@ -19,7 +19,7 @@
 @endsection
 
 @section('breadcrumbs')
-    <li><a href="#">Purchase Order Details</a></li>
+    <li><a href="#">Purchase Order Details</a></li>	
 @stop
 
 @section('content')
