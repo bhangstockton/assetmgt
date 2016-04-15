@@ -30,7 +30,7 @@
                 <!-- Nav Tabs -->
                 <ul class="nav nav-tabs">
                     <li id='tn_list' class="active"><a href="#tc_list" data-toggle="tab">List</a></li>
-                    <li id='tn_add_supplier'><a href="#tc_add_supplier" data-toggle="tab">Add Offices</a></li>
+                    <li id='tn_add_offices'><a href="#tc_add_offices" data-toggle="tab">Add Offices</a></li>
                     <li class="pull-right"><a href="#" class="text-muted"><i class="fa fa-medkit"></i></a></li>
                 </ul>
                 <!-- Tab Content -->
@@ -46,20 +46,32 @@
                                     <td class='text-center' style="width: 7%; border-top: 0px !important;"><b><i class="fa fa-bolt"></i> </b></td>
                                 </tr>
                                 <!-- rows -->
-                               
+                                @foreach ($offices as $office)
+                                    <tr>
+                                        <td>{{ $office->id }}</td>
+                                        <td>{{ $office->office_name }}</td>
+                                        <td>
                                             <!-- BTN: /delete -->
+                                            {{ Form::button('<i class="fa fa-trash"></i> &nbsp; Delete', [
+                                                'onclick' => "location.href='". url('/')."'",
+                                                "class" => "btn btn-danger btn-xs",
+                                            ]) }}
+                                            <!-- BTN: /delete -->
+                                        </td>
+                                     </tr> 
+                                @endforeach      
                             </table>
                         </div>
-                        <!-- /TABTABLE: List of Suppliers -->
+                        <!-- /TABTABLE: List of Offices -->
                     </div>
                     <!-- /.tab-pane -->
-                    <div id='tc_add_supplier' class="tab-pane">
-                        <!-- TEXT: Supplier's Name -->
+                    <div id='tc_add_offices' class="tab-pane">
+                        <!-- TEXT: Office's Name -->
                         <div class='form-group'>
-                            {{ Form::label('Department/Office') }}
+                            {{ Form::label('Office') }}
                             {{ Form::text('name', '',[
                                 'class' => 'form-control',
-                                'placeholder' => 'Office\'s Name',
+                                'placeholder' => 'Office Name',
                             ]) }}
                             {{ $errors->first('name', '<code>:message</code>') }}
                         </div>

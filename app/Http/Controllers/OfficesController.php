@@ -5,9 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Office;
 
 class OfficesController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +20,8 @@ class OfficesController extends Controller
      */
     public function index()
     {
-        return view('offices');
+        $data['offices'] = Office::all();
+        return view('office' , $data);
     }
 
     /**
