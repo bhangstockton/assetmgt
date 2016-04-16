@@ -13,10 +13,7 @@
 		<b>Asset</b>MS&reg;<br>
 		<span style='font-size: 16px;'>for Philippine National Railways</span>
 	</div>
-	<div>
-		
-	</div>
-	
+
 	<div class="login-box-body">
 		<p class="login-box-msg">Sign in to start your session</p>
 		<form method="POST" action="{{ url('/login') }}">
