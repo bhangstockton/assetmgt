@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Employee;
 
-class EmployeesController extends Controller
+class EmployeeController extends Controller
 {
     function __construct()
     {
@@ -20,7 +20,7 @@ class EmployeesController extends Controller
      */ 
     public function index()
     {
-        $data['employees'] = Employee::all();
+        $data['employees'] = Employee::orderBy('id','desc')->get();
         return view('employees', $data);
     }
 
@@ -42,7 +42,26 @@ class EmployeesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Set Current Tab
+        $request->session()->flash('currtab', 'new');
+
+        $this->validate($request, [
+            'lastname' => 'required|max:50',
+            'firstname' => 'required|max:50',
+        ]);
+
+        // Validation Success
+        $employee = new Employee;
+        $employee->lastname = title_case($request->lastname);
+        $employee->firstname = title_case($request->firstname);
+        $employee->save();
+
+        $request->session()->flash('currtab', 'list');
+        $request->session()->flash('sys_message_success', trans('messages.insert-success-title',['info'=>'Employee']));
+        $request->session()->flash('sys_message_content', trans('messages.insert-success-message',['info'=> $employee->id ]));
+
+        return redirect()->back();
+        
     }
 
     /**

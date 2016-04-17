@@ -18,7 +18,7 @@ Route::auth();
 Route::get('/','DashboardController@index');
 Route::resource('/supplier','SuppliersController');
 Route::resource('/office','OfficesController');
-Route::resource('/employees','EmployeesController');
+Route::resource('/employee','EmployeeController');
 Route::resource('/purchase','PurchaseController');
 Route::resource('/po_details', 'PODetailsController');
 

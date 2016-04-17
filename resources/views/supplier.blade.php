@@ -1,9 +1,5 @@
 @extends('template.bones')
 
-@section('sysmod-title')
-    AMS
-@stop
-
 @section('page-icon')
 	
 @stop
@@ -15,7 +11,7 @@
 @section('page-ident')
 	{{ Form::hidden('page_group_lev1','none',['id' => 'page_group_lev1',]) }}
 	{{ Form::hidden('page_group_lev2','none',['id' => 'page_group_lev2',]) }}
-	{{ Form::hidden('page_id','pageid',['id' => 'page_id',]) }}
+	{{ Form::hidden('page_id','supplier',['id' => 'page_id',]) }}
 @endsection
 
 @section('breadcrumbs')

@@ -28,7 +28,7 @@
 			<!-- TABBOX: Purchase Information -->
 			<div class="nav-tabs-custom">
 				<!-- Nav Tabs -->
-				<ul class="nav nav-tabs">
+				<ul class="nav nav-tabs" id="amstab">
 					<li id='tn_list_purchase' class="active"><a href="#tc_list_purchase" data-toggle="tab">List of Purchase Orders</a></li>
 					<li id='tn_add_po'><a href="#tc_add_po" data-toggle="tab">Add Purchase Order</a></li>
 					<li class="pull-right"><a href="#" class="text-muted"><i class="fa fa-medkit"></i></a></li>

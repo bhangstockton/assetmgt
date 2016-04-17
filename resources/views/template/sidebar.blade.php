@@ -31,60 +31,16 @@
 		<!-- /.search form -->
 
 		<!-- Sidebar Menu -->
-		{{-- EDMS NAV--}}
-		<ul class="sidebar-menu">
-			<li id='ememo' class="treeview">
-				<a href="#">
-					<i class="fa fa-stop"></i> <span>eMEMO</span>
-					<i class="fa fa-angle-left pull-right"></i>
-				</a>
-				<ul class="treeview-menu">
-					<li id='ememo-dashboard'><a href="{{ url('ememo/dashboard') }}"><i class="fa fa-caret-right"></i>Dashboard</a></li>
-					<li id='ememo-tasks'>
-						<a href="#"><i class="fa fa-caret-right"></i>Tasks <i class="fa fa-angle-left pull-right"></i></a>
-						<ul class="treeview-menu">
-							<li id='ememo-documents-list'><a href="#"><i class="fa fa-caret-right"></i>List</a></li>
-						</ul>
-					</li>
-					<li><a href="#"><i class="fa fa-caret-right"></i>Incoming</a></li>
-					<li><a href="#"><i class="fa fa-caret-right"></i>Releases</a></li>
-					<li><a href="#"><i class="fa fa-caret-right"></i>Pending</a></li>
-				</ul>
-			</li>
-		</ul>
-		{{-- EMEMO NAV--}}
-		<ul class="sidebar-menu">
-			<li id='edms' class="treeview">
-				<a href="#">
-				<i class="fa fa-stop"></i> <span>EDMS</span>
-				<i class="fa fa-angle-left pull-right"></i>
-				</a>
-				<ul class="treeview-menu">
-					<li id='edms-dashboard'><a href="{{ url('edms/dashboard') }}"><i class="fa fa-caret-right"></i>Dashboard</a></li>
-					<li id='edms-documents'>
-						<a href="#"><i class="fa fa-caret-right"></i>Documents <i class="fa fa-angle-left pull-right"></i></a>
-						<ul class="treeview-menu">
-							<li id='edms-documents-list'><a href="#"><i class="fa fa-caret-right"></i>List</a></li>
-						</ul>
-					</li>
-					<li><a href="#"><i class="fa fa-caret-right"></i>Level One</a></li>
-				</ul>
-			</li>
-		</ul>
-		{{-- WMS NAV --}}
 		<ul class="sidebar-menu">
 			<!-- Optionally, you can add icons to the links -->
 			<li id='dashboard'><a href="{{ url('/') }}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
-			<li id='sysmods'><a href="{{ url('/sysmods') }}"><i class="fa fa-th-large"></i> <span>System Modules</span></a></li>
-			<li id='sysmods_list'>
-				<a href="#"><i class="fa fa-th-large"></i>System Modules<i class="fa fa-angle-left pull-right"></i></a>
-				<ul class="treeview-menu">
-					<li id='ememo-documents-list'><a href="{{ url('edms/dashboard') }}"><i class="fa fa-caret-right"></i>EDMS</a></li>
-					<li id='ememo-documents-list'><a href="{{ url('ememo/dashboard') }}"><i class="fa fa-caret-right"></i>eMEMO</a></li>
-				</ul>
-			</li>
+			<li id='supplier'><a href="{{ url('/supplier') }}"><i class="fa fa-truck"></i> <span>Supplier</span> </a></li>
+			<li id='offices'><a href="{{ url('/office') }}"><i class="fa fa-institution"></i> <span>Offices</span> </a></li>
+			<li id='employees'><a href="{{ url('/employee') }}"><i class="fa fa-users"></i> <span>Employees</span> </a></li>
+			<li id='purchase_order'><a href="{{ url('/purchase') }}"><i class="fa fa-folder"></i> <span>Purchase Order</span> </a></li>
+			<li id='purchase_order_details'><a href="{{ url('/po_details') }}"><i class="fa fa-folder"></i> <span>Purchase Order Details</span> </a></li>
 			<li id='admin'>
-				<a href="#"><i class="fa fa-gear"></i>Administration<i class="fa fa-angle-left pull-right"></i></a>
+				<a href="#"><i class="fa fa-gear"></i><span>Administration</span><i class="fa fa-angle-left pull-right"></i></a>
 				<ul class="treeview-menu">
 					<li id='user-manager'><a href="{{ url('admin/user/manager') }}"><i class="fa fa-caret-right"></i>User Manager</a></li>
 					<li id='system-settings'><a href="{{ url('/') }}"><i class="fa fa-caret-right"></i> <span>System Settings</span> </a></li>
@@ -95,11 +51,6 @@
 					<li id='logs'><a href="{{ url('/') }}"><i class="fa fa-caret-right"></i> <span>Logs</span> </a></li>
 				</ul>
 			</li>
-			<li id='pageid'><a href="{{ url('/supplier') }}"><i class="fa fa-truck"></i> <span>Supplier</span> </a></li>
-			<li id='pageid'><a href="{{ url('/office') }}"><i class="fa fa-institution"></i> <span>Offices</span> </a></li>
-			<li id='pageid'><a href="{{ url('/employees') }}"><i class="fa fa-users"></i> <span>Employees</span> </a></li>
-			<li id='pageid'><a href="{{ url('/purchase') }}"><i class="fa fa-folder"></i> <span>Purchase Order</span> </a></li>
-			<li id='pageid'><a href="{{ url('/po_details') }}"><i class="fa fa-folder"></i> <span>Purchase Order Details</span> </a></li>
 			<li><a href="{{ url('bower_components/adminlte/index.html') }}"><i class="fa fa-link"></i> <span>AdminLTE Template</span></a></li>
 
 		</ul>

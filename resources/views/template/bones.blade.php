@@ -79,7 +79,7 @@ desired effect
 				<small>@yield('sysmod-title')</small>
 			</h1>
 			<ol class="breadcrumb">
-				<li><a href="{{ url('/') }}"><i class="fa fa-dashboard"></i> WMS</a></li>
+				<li><a href="{{ url('/') }}"><i class="fa fa-dashboard"></i> Home</a></li>
 				@yield('breadcrumbs')
 				<li class='active'>@yield('page-title')</li>
 			</ol>
@@ -173,6 +173,10 @@ desired effect
 			checkboxClass: 'icheckbox_square-blue',
 			radioClass: 'iradio_square-blue'
 		});
+
+		//Process DocProfile Active Tabs
+		var page_activetab = $('#page_activetab').val();
+		$('#amstab a[href="#tc_' + page_activetab + '"]').tab('show')
 	});
 </script>
 
