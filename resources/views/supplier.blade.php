@@ -70,138 +70,122 @@
 					</div>
 					<!-- /.tab-pane -->
 					<div id='tc_add_supplier' class="tab-pane">
-
-						<!-- FORM: Add Supplier -->
+						<!-- FORM: Title -->
 						{{ Form::open([
-						    "url" => "suppliers",
-						    "autocomplete" => "off",
-						    "files" => false,
+						    "url" => "supplier",
+						    "autocomplete" => "off",
+						    "files" => false,
 						]) }}
-							
 						
-						{{ Form::close() }}
-						<!-- FORM: /Title -->
-						<!-- TEXT: Supplier's Name -->
-						<div class='form-group'>
-						    {{ Form::label('Name of Supplier') }}
-						    {{ Form::text('name', '',[
-						        'class' => 'form-control',
-						        'placeholder' => 'Supplier\'s Name',
-						    ]) }}
-						    {{ $errors->first('name', '<code>:message</code>') }}
-						</div>
-						<!-- --------------- -->
-						<!-- TEXT: Address 1 -->
-						<div class='form-group'>
-							<div class="row">
-
-							   <!-- TEXTA: Address 1 -->
-							   	<div class="col-xs-4">
-							       {{ Form::label('Address 1') }}
-							       {{ Form::textarea('address_1', '',[
-							           'class' => 'form-control',
-							           'placeholder' => 'Address 1',
-							           'rows' => '3',
-							       ]) }}
-							       {{ $errors->first('address_1', '<code>:message</code>') }}
-							   </div>
-							   <!-- TEXTA: Address 2 -->
-								<div class="col-xs-4">
-							    {{ Form::label('Address 2') }}
-							    {{ Form::textarea('address', '',[
+							<!-- TEXT: Supplier's Name -->
+							<div class='form-group'>
+							    {{ Form::label('Name of Supplier') }}
+							    {{ Form::text('name', '',[
 							        'class' => 'form-control',
-							        'placeholder' => 'Address 2',
+							        'placeholder' => 'Supplier\'s Name',
+							    ]) }}
+							    {{ $errors->first('name', '<code>:message</code>') }}
+							</div>
+							<!-- GROUP: Addresses -->
+							<div class='form-group'>
+								<div class="row">
+								    <!-- TEXTA: Address 1 -->
+								   	<div class="col-xs-4">
+								       {{ Form::label('Address 1') }}
+								       {{ Form::textarea('address_1', '',[
+								           'class' => 'form-control',
+								           'placeholder' => 'Address 1',
+								           'rows' => '3',
+								       ]) }}
+								       {{ $errors->first('address_1', '<code>:message</code>') }}
+								    </div>
+								    <!-- TEXTA: Address 2 -->
+									<div class="col-xs-4">
+									    {{ Form::label('Address 2') }}
+									    {{ Form::textarea('address', '',[
+									        'class' => 'form-control',
+									        'placeholder' => 'Address 2',
+									        'rows' => '3',
+									    ]) }}
+									    {{ $errors->first('address', '<code>:message</code>') }}
+									</div>
+									<!-- TEXT: TIN -->
+									<div class="col-xs-4">
+									    {{ Form::label('TIN No.') }}
+									    {{ Form::text('tin', '',[
+									        'class' => 'form-control',
+									        'placeholder' => 'TIN No.',
+									    ]) }}
+									    {{ $errors->first('tin', '<code>:message</code>') }}
+							    	</div>
+								</div>
+							</div>
+							<!-- TEXT: President -->
+							<div class='form-group'>
+							    {{ Form::label('President') }}
+							    {{ Form::text('president', '',[
+							        'class' => 'form-control',
+							        'placeholder' => 'President',
+							    ]) }}
+							    {{ $errors->first('president', '<code>:message</code>') }}
+							</div>
+							<!-- TEXT: Contact Person -->
+							<div class='form-group'>
+							    {{ Form::label('Contact Person') }}
+							    {{ Form::text('contactp', '',[
+							        'class' => 'form-control',
+							        'placeholder' => 'Contact Person',
+							    ]) }}
+							    {{ $errors->first('contactp', '<code>:message</code>') }}
+							</div>
+							<!-- GROUP: Contact Numbers -->
+							<div class='form-group'>
+								<div class="row">
+									<!-- TEXT: Contact No. 1 -->
+									<div class="col-xs-4">
+									    {{ Form::label('Contact No. 1') }}
+									    {{ Form::text('contact_1', '',[
+									        'class' => 'form-control',
+									        'placeholder' => 'Contact No. 1',
+									    ]) }}
+									    {{ $errors->first('contact_1', '<code>:message</code>') }}
+									</div>
+									<!-- TEXT: Contact No. 2 -->
+									<div class="col-xs-4">
+									    {{ Form::label('Contact No. 2') }}
+									    {{ Form::text('contact_2', '',[
+									        'class' => 'form-control',
+									        'placeholder' => 'Contact No. 2',
+									    ]) }}
+									    {{ $errors->first('contact_2', '<code>:message</code>') }}
+								    </div>
+									<!-- TEXT: Fax No. -->
+									<div class="col-xs-4">
+									    {{ Form::label('Fax No.') }}
+									    {{ Form::text('fax', '',[
+									        'class' => 'form-control',
+									        'placeholder' => 'Fax No.',
+									    ]) }}
+									    {{ $errors->first('fax', '<code>:message</code>') }}
+								    </div>
+								</div>
+							</div>
+							<!-- TEXTA: Remarks -->
+							<div class='form-group'>
+							    {{ Form::label('Remarks') }}
+							    {{ Form::textarea('remarks', '',[
+							        'class' => 'form-control',
+							        'placeholder' => 'Remarks',
 							        'rows' => '3',
 							    ]) }}
-							    {{ $errors->first('address', '<code>:message</code>') }}
-								</div>
-								<!-- TEXT: TIN -->
-						
-								<div class="col-xs-4">
-							    {{ Form::label('TIN No.') }}
-							    {{ Form::text('tin', '',[
-							        'class' => 'form-control',
-							        'placeholder' => 'TIN No.',
-							    ]) }}
-							    {{ $errors->first('tin', '<code>:message</code>') }}
-						    	</div>
+							    {{ $errors->first('remarks', '<code>:message</code>') }}
 							</div>
-							
-						
-					</div>
-						<!-- TEXT: President -->
-						<div class='form-group'>
-						    {{ Form::label('President') }}
-						    {{ Form::text('president', '',[
-						        'class' => 'form-control',
-						        'placeholder' => 'President',
-						    ]) }}
-						    {{ $errors->first('president', '<code>:message</code>') }}
-						</div>
-						<!-- TEXT: Contact Person -->
-						<div class='form-group'>
-						    {{ Form::label('Contact Person') }}
-						    {{ Form::text('contactp', '',[
-						        'class' => 'form-control',
-						        'placeholder' => 'Contact Person',
-						    ]) }}
-						    {{ $errors->first('contactp', '<code>:message</code>') }}
-						</div>
-						<!-- ------------------- -->
-						<!-- ------------------- -->
-						<div class='form-group'>
-							<div class="row">
-
-								<!-- TEXT: Contact No. 1 -->
-								<div class="col-xs-4">
-								    {{ Form::label('Contact No. 1') }}
-								    {{ Form::text('contact_1', '',[
-								        'class' => 'form-control',
-								        'placeholder' => 'Contact No. 1',
-								    ]) }}
-								    {{ $errors->first('contact_1', '<code>:message</code>') }}
-								</div>
-								
-								<!-- TEXT: Contact No. 2 -->
-								<div class="col-xs-4">
-								    {{ Form::label('Contact No. 2') }}
-								    {{ Form::text('contact_2', '',[
-								        'class' => 'form-control',
-								        'placeholder' => 'Contact No. 2',
-								    ]) }}
-								    {{ $errors->first('contact_2', '<code>:message</code>') }}
-							    </div>
-								
-								<!-- TEXT: Fax No. -->
-								<div class="col-xs-4">
-								    {{ Form::label('Fax No.') }}
-								    {{ Form::text('fax', '',[
-								        'class' => 'form-control',
-								        'placeholder' => 'Fax No.',
-								    ]) }}
-								    {{ $errors->first('fax', '<code>:message</code>') }}
-							    </div>
-
-							</div>
-						</div>
-
-						<!-- ----------------------- -->
-						<!-- TEXTA: Remarks -->
-						<div class='form-group'>
-						    {{ Form::label('Remarks') }}
-						    {{ Form::textarea('remarks', '',[
-						        'class' => 'form-control',
-						        'placeholder' => 'Remarks',
-						        'rows' => '3',
-						    ]) }}
-						    {{ $errors->first('remarks', '<code>:message</code>') }}
-						</div>
-						<!-- Add Supplier -->
-						{{ Form::button('<i class="fa fa-check"></i> &nbsp; Add Supplier', [
-						    "class" => "btn btn-primary",
-						    "id"	=> "submit",
-						    "type"  => "submit",
-						]) }}
+							<!-- Button Add Supplier -->
+							{{ Form::button('<i class="fa fa-check"></i> &nbsp; Add Supplier', [
+							    "class" => "btn btn-primary",
+							    "id"	=> "submit",
+							    "type"  => "submit",
+							]) }}
 
 						<!--{{ Form::close() }}-->
 						<!-- /Add Supplier -->
