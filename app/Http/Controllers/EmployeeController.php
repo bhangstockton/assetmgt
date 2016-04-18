@@ -48,6 +48,10 @@ class EmployeeController extends Controller
         $this->validate($request, [
             'lastname' => 'required|max:50',
             'firstname' => 'required|max:50',
+            'middlename' => 'required|max:50',
+            'suffix' => 'max:4',
+            'position' => 'required|max:50',
+            'remarks' => 'max:255',
         ]);
 
         // Validation Success

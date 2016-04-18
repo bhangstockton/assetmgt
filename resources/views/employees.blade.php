@@ -43,9 +43,9 @@
 						        <!-- rows -->
 						        @foreach ($employees as $employee)
 						        	<tr>
-									<td>{{ $employee->id }}</td>
-									<td>{{ $employee->lastname .', '. $employee->firstname .' '. substr($employee->middlename,0,1) .'. '. $employee->suffix }}</td>
-								</tr>
+										<td>{{ $employee->id }}</td>
+										<td>{{ $employee->lastname .', '. $employee->firstname .' '. substr($employee->middlename,0,1) .'. '. $employee->suffix }}</td>
+									</tr>
 						        @endforeach
 								
 						    </table>
@@ -79,7 +79,7 @@
 							        'class' => 'form-control',
 							        'placeholder' => 'Middle Name',
 							    ]) }}
-							    {{ $errors->first('middlename', '<code>:message</code>') }}
+							    {!! $errors->first('middlename', '<code>:message</code>') !!}
 							</div>
 							<!-- TEXT: Suffix -->
 							<div class='form-group'>
@@ -89,7 +89,7 @@
 							    		    'class' => 'form-control',
 							    		    'placeholder' => 'Suffix',
 							    		]) }}
-							    		{{ $errors->first('suffix', '<code>:message</code>') }}
+							    		{!! $errors->first('suffix', '<code>:message</code>') !!}
 							    	</div>
 							    </div>
 							</div>
@@ -99,13 +99,13 @@
 							        'class' => 'form-control',
 							        'placeholder' => 'Position',
 							    ]) }}
-							    {{ $errors->first('position', '<code>:message</code>') }}
+							    {!! $errors->first('position', '<code>:message</code>') !!}
 							</div>
 							<!-- Sex -->
 							<div class="form-group">
 							    <p>{{ Form::radio('sex','male', false, ['class'=>'square-blue']) }} &nbsp; Male</p>
 							    <p>{{ Form::radio('sex','female', false, ['class'=>'square-blue']) }} &nbsp; Female</p>
-							    {{ $errors->first('sex', '<code>:message</code>') }}
+							    {!! $errors->first('sex', '<code>:message</code>') !!}
 							</div>
 							<!-- /Sex -->
 							<!-- TEXTA: Remarks -->
@@ -115,7 +115,7 @@
 							        'placeholder' => 'Remarks',
 							        'rows' => '3',
 							    ]) }}
-							    {{ $errors->first('remrks', '<code>:message</code>') }}
+							    {!! $errors->first('remrks', '<code>:message</code>') !!}
 							</div>
 							<!-- submit -->
 							{{ Form::button('<i class="fa fa-check"></i> &nbsp; Submit', [
