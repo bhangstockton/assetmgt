@@ -3,6 +3,13 @@
 @section('page-icon')
 	
 @stop
+@section('additional_css')
+	<link rel="stylesheet" href="{{ asset('bower_components/adminlte/plugins/iCheck/square/_all.css') }}">
+@stop
+
+@section('additional_js')
+	<script src="{{ asset('/bower_components/adminlte/plugins/iCheck/icheck.min.js') }}"></script>
+@stop
 
 @section('page-title')
     Supplier
@@ -63,6 +70,9 @@
 					</div>
 					<!-- /.tab-pane -->
 					<div id='tc_add_supplier' class="tab-pane">
+
+						<!-- FORM: Add New Employee -->
+						{{ Form::open(array('route' => 'supplier.store')) }}
 						<!-- TEXT: Supplier's Name -->
 						<div class='form-group'>
 						    {{ Form::label('Name of Supplier') }}
@@ -184,6 +194,8 @@
 						    "id"	=> "submit",
 						    "type"  => "submit",
 						]) }}
+
+						{{ Form::close() }}
 						<!-- /Add Supplier -->
 					</div>
 					<!-- /.tab-pane -->

@@ -21,7 +21,7 @@ class SuppliersController extends Controller
      */
     public function index()
     {
-        $data['suppliers'] = Supplier::all();
+        $data['suppliers'] = Supplier::orderBy('id', 'desc')->get();
         return view('supplier', $data);
     }
 
@@ -43,7 +43,26 @@ class SuppliersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Set Current Tab
+
+        $request->session()->flash('currtab','new');
+
+        $this->validate($request, [
+            'name' => 'reuired|max:50',
+            'address1' => 'required|max:50',
+    ])
+    
+        // Validation Success
+        $suppliers = new Supplier;
+        $suppliers->name = title_case($request->name);
+        $suppliers->address1 = title_case($request->address1);
+        $suppliers->save();
+
+        $request->session()->flash('currtab', 'list');
+        $request->session()->flash('sys_message_success', trans('messages.insert-success-title', ['info'=>'Supplier']));
+        $request->session()->flash('sys_message_content', trans('messages.insert-success-message', ['info'=> $suppliers->id ]));
+
+        return redirect()->back();
     }
 
     /**
