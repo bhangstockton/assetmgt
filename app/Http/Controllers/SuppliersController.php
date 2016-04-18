@@ -48,9 +48,9 @@ class SuppliersController extends Controller
         $request->session()->flash('currtab','new');
 
         $this->validate($request, [
-            'name' => 'reuired|max:50',
-            'address1' => 'required|max:50',
-    ])
+            'name' => 'reuired|max:255',
+            'address1' => 'required|max:255',
+    ]);
     
         // Validation Success
         $suppliers = new Supplier;

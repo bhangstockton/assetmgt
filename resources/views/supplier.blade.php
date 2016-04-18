@@ -71,8 +71,16 @@
 					<!-- /.tab-pane -->
 					<div id='tc_add_supplier' class="tab-pane">
 
-						<!-- FORM: Add New Employee -->
-						{{ Form::open(array('route' => 'supplier.store')) }}
+						<!-- FORM: Add Supplier -->
+						{{ Form::open([
+						    "url" => "suppliers",
+						    "autocomplete" => "off",
+						    "files" => false,
+						]) }}
+							
+						
+						{{ Form::close() }}
+						<!-- FORM: /Title -->
 						<!-- TEXT: Supplier's Name -->
 						<div class='form-group'>
 						    {{ Form::label('Name of Supplier') }}
@@ -195,7 +203,7 @@
 						    "type"  => "submit",
 						]) }}
 
-						{{ Form::close() }}
+						<!--{{ Form::close() }}-->
 						<!-- /Add Supplier -->
 					</div>
 					<!-- /.tab-pane -->
