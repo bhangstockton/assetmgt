@@ -187,7 +187,7 @@
 							    "type"  => "submit",
 							]) }}
 
-						<!--{{ Form::close() }}-->
+						{{ Form::close() }}
 						<!-- /Add Supplier -->
 					</div>
 					<!-- /.tab-pane -->
