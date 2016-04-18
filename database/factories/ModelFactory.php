@@ -47,3 +47,10 @@ $factory->defineAs(App\Employee::class, 'male', function (Faker\Generator $faker
         'sex' => 'm',
         ]);
 });
+
+// OFFICES
+$factory->define(App\Office::class, function (Faker\Generator $faker) {
+    return [
+        'office_name' => $faker->company .' Department',
+    ];
+});
