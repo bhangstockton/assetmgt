@@ -26,7 +26,7 @@ $factory->define(App\Employee::class, function (Faker\Generator $faker) {
     	'lastname' => $faker->lastname,
         'middlename' => $faker->lastname,
         'remarks' => $faker->text($maxNbChars = 200),
-        'position' => $faker->jobtitle,
+        'position' => $faker->text($maxNbChars = 20),
     ];
 });
 
