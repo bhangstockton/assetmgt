@@ -70,13 +70,13 @@
 					</div>
 					<!-- /.tab-pane -->
 					<div id='tc_add_supplier' class="tab-pane">
+
 						<!-- FORM: Title -->
 						{{ Form::open([
 						    "url" => "supplier",
 						    "autocomplete" => "off",
 						    "files" => false,
 						]) }}
-						
 							<!-- TEXT: Supplier's Name -->
 							<div class='form-group'>
 							    {{ Form::label('Name of Supplier') }}
@@ -84,7 +84,7 @@
 							        'class' => 'form-control',
 							        'placeholder' => 'Supplier\'s Name',
 							    ]) }}
-							    {{ $errors->first('name', '<code>:message</code>') }}
+							    {!! $errors->first('name', '<code>:message</code>') !!}
 							</div>
 							<!-- GROUP: Addresses -->
 							<div class='form-group'>
@@ -92,12 +92,12 @@
 								    <!-- TEXTA: Address 1 -->
 								   	<div class="col-xs-4">
 								       {{ Form::label('Address 1') }}
-								       {{ Form::textarea('address_1', '',[
+								       {{ Form::textarea('address1', '',[
 								           'class' => 'form-control',
 								           'placeholder' => 'Address 1',
 								           'rows' => '3',
 								       ]) }}
-								       {{ $errors->first('address_1', '<code>:message</code>') }}
+								       {!! $errors->first('address1', '<code>:message</code>') !!}
 								    </div>
 								    <!-- TEXTA: Address 2 -->
 									<div class="col-xs-4">
@@ -116,7 +116,7 @@
 									        'class' => 'form-control',
 									        'placeholder' => 'TIN No.',
 									    ]) }}
-									    {{ $errors->first('tin', '<code>:message</code>') }}
+									    {!! $errors->first('tin', '<code>:message</code>') !!}
 							    	</div>
 								</div>
 							</div>
@@ -127,16 +127,16 @@
 							        'class' => 'form-control',
 							        'placeholder' => 'President',
 							    ]) }}
-							    {{ $errors->first('president', '<code>:message</code>') }}
+							    {!! $errors->first('president', '<code>:message</code>') !!}
 							</div>
 							<!-- TEXT: Contact Person -->
 							<div class='form-group'>
 							    {{ Form::label('Contact Person') }}
-							    {{ Form::text('contactp', '',[
+							    {{ Form::text('contactper', '',[
 							        'class' => 'form-control',
 							        'placeholder' => 'Contact Person',
 							    ]) }}
-							    {{ $errors->first('contactp', '<code>:message</code>') }}
+							    {!! $errors->first('contactper', '<code>:message</code>') !!}
 							</div>
 							<!-- GROUP: Contact Numbers -->
 							<div class='form-group'>
@@ -144,11 +144,11 @@
 									<!-- TEXT: Contact No. 1 -->
 									<div class="col-xs-4">
 									    {{ Form::label('Contact No. 1') }}
-									    {{ Form::text('contact_1', '',[
+									    {{ Form::text('contact1', '',[
 									        'class' => 'form-control',
 									        'placeholder' => 'Contact No. 1',
 									    ]) }}
-									    {{ $errors->first('contact_1', '<code>:message</code>') }}
+									    {!! $errors->first('contact1', '<code>:message</code>') !!}
 									</div>
 									<!-- TEXT: Contact No. 2 -->
 									<div class="col-xs-4">
@@ -186,9 +186,9 @@
 							    "id"	=> "submit",
 							    "type"  => "submit",
 							]) }}
-
 						{{ Form::close() }}
-						<!-- /Add Supplier -->
+
+						
 					</div>
 					<!-- /.tab-pane -->
 				</div>

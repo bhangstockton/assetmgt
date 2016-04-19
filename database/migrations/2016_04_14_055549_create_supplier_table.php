@@ -16,6 +16,11 @@ class CreateSupplierTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('address1');
+            $table->string('tin');
+            $table->string('president');
+            $table->string('contact_per');
+            $table->string('contact1');
+            
             $table->timestamps();
         });
     }
