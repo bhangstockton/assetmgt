@@ -17,6 +17,8 @@ class CreateEmployeeTable extends Migration
             $table->string('lastname');
             $table->string('firstname');
             $table->string('middlename');
+            $table->string('createdby');
+            $table->string('updatedby');
             $table->timestamps();
         });
     }

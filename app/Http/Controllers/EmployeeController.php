@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Employee;
+use Auth;
 
 class EmployeeController extends Controller
 {
@@ -50,6 +51,7 @@ class EmployeeController extends Controller
             'firstname' => 'required|max:50',
             'middlename' => 'required|max:50',
             'suffix' => 'max:4',
+            'sex' => 'required',
             'position' => 'required|max:50',
             'remarks' => 'max:255',
         ]);
@@ -58,6 +60,12 @@ class EmployeeController extends Controller
         $employee = new Employee;
         $employee->lastname = title_case($request->lastname);
         $employee->firstname = title_case($request->firstname);
+        $employee->middlename = title_case($request->middlename);
+        $employee->suffix = strtoupper($request->suffix);
+        $employee->sex = $request->sex;
+        $employee->position = title_case($request->position);
+        $employee->remarks = $request->remarks;
+        $employee->createdby = Auth::user()->email;
         $employee->save();
 
         $request->session()->flash('currtab', 'list');

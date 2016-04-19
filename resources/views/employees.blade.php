@@ -45,6 +45,8 @@
 						        	<tr>
 										<td>{{ $employee->id }}</td>
 										<td>{{ $employee->lastname .', '. $employee->firstname .' '. substr($employee->middlename,0,1) .'. '. $employee->suffix }}</td>
+										<td>{{ $employee->position }}</td>
+										<td>{{ $employee->remarks }}</td>
 									</tr>
 						        @endforeach
 								
@@ -110,7 +112,7 @@
 							<!-- /Sex -->
 							<!-- TEXTA: Remarks -->
 							<div class='form-group'>
-							    {{ Form::textarea('remrks', '',[
+							    {{ Form::textarea('remarks', '',[
 							        'class' => 'form-control',
 							        'placeholder' => 'Remarks',
 							        'rows' => '3',
