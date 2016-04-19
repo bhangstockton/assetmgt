@@ -92,8 +92,11 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'name' => [
+            'required' => 'The Name field is required.',
+        ],
+        'contactper' => [
+            'required' => 'The Contact Person field is required.',
         ],
     ],
 

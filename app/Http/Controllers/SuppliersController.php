@@ -52,7 +52,7 @@ class SuppliersController extends Controller
             'contactper' => 'required|max:50',
             'contact1' => 'required|max:12',
         ]);
-    
+        
         // Validation Success
         // $suppliers = new Supplier;
         // $suppliers->name = title_case($request->name);
