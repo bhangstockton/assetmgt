@@ -16,5 +16,6 @@ class DatabaseSeeder extends Seeder
         $this->call(EmployeeSeeder::class);
         $this->call(OfficeSeeder::class);
         $this->call(BrandSeeder::class);
+        $this->call(InventorySeeder::class);
     }
 }

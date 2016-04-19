@@ -61,3 +61,10 @@ $factory->define(App\Brand::class, function (Faker\Generator $faker) {
         'name' => $faker->word,
     ];
 });
+
+// Inventory
+$factory->define(App\Inventory::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->word,
+    ];
+});
