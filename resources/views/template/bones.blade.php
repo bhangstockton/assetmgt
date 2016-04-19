@@ -174,7 +174,7 @@ desired effect
 			radioClass: 'iradio_square-blue'
 		});
 
-		//Process DocProfile Active Tabs
+		//Process Active Tabs
 		var page_activetab = $('#page_activetab').val();
 		$('#amstab a[href="#tc_' + page_activetab + '"]').tab('show')
 	});

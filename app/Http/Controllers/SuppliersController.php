@@ -43,7 +43,11 @@ class SuppliersController extends Controller
      */
     public function store(Request $request)
     {
+        // Set Current Tab
+        $request->session()->flash('currtab', 'add_supplier');
+
         // Validation Rules
+        
         $this->validate($request, [
             'name' => 'required|max:255',
             'address1' => 'required|max:255',
@@ -54,10 +58,19 @@ class SuppliersController extends Controller
         ]);
         
         // Validation Success
-        // $suppliers = new Supplier;
-        // $suppliers->name = title_case($request->name);
-        // $suppliers->address1 = title_case($request->address1);
-        // $suppliers->save();
+        $supplier = new Supplier;
+        $supplier->name = title_case($request->name);
+        $supplier->address1 = title_case($request->address1);
+        $supplier->president = title_case($request->president);
+        $supplier->save();
+
+        // Set Current Tab
+        $request->session()->flash('currtab', 'list');
+        // Flash Message
+        $request->session()->flash('sys_message_success', trans('messages.insert-success-title',['info'=>'Supplier']));
+        $request->session()->flash('sys_message_content', trans('messages.insert-success-message',['info'=> $supplier->id ]));
+
+        return redirect()->back();
     }
 
     /**

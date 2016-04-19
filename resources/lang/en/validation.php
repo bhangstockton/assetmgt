@@ -92,11 +92,14 @@ return [
     */
 
     'custom' => [
-        'name' => [
-            'required' => 'The Name field is required.',
-        ],
         'contactper' => [
             'required' => 'The Contact Person field is required.',
+        ],
+        'address1' => [
+            'required' => 'The Address field is required.',
+        ],
+        'contact1' => [
+            'required' => 'The Contact No. field is required.',
         ],
     ],
 

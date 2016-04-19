@@ -20,7 +20,12 @@ class CreateSupplierTable extends Migration
             $table->string('president');
             $table->string('contact_per');
             $table->string('contact1');
+            $table->string('contact2');
+            $table->string('fax');
+            $table->string('remarks');
             
+            $table->string('createdby');
+            $table->string('updateby');
             $table->timestamps();
         });
     }

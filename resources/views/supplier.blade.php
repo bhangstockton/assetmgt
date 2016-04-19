@@ -26,10 +26,12 @@
 @stop
 
 @section('content')
+	<input id="page_activetab" name="page_activetab" type="hidden" value="{{ Session::get('currtab') ? Session::get('currtab') : 'list' }}">
+
 	<div class="row">
 		<div class="col-md-12">
 			<!-- TABBOX: Information -->
-			<div class="nav-tabs-custom">
+			<div class="nav-tabs-custom" id="amstab">
 				<!-- Nav Tabs -->
 				<ul class="nav nav-tabs">
 					<li id='tn_list' class="active"><a href="#tc_list" data-toggle="tab">List</a></li>
@@ -47,6 +49,8 @@
 						            <td style="border-top: 0px !important;"><b>ID</b></td>
 						            <td style="border-top: 0px !important;"><b>Supplier Name</b></td>
 						            <td style="border-top: 0px !important;"><b>Address</b></td>
+						            <td style="border-top: 0px !important;"><b>President</b></td>
+						            <td class='text-center' style="width: 7%; border-top: 0px !important;"><b><i class="fa fa-bolt"></i> </b></td>
 						        </tr>
 						        <!-- rows -->
 								@foreach ($suppliers as $supplier)
@@ -54,6 +58,7 @@
 										<td>{{ $supplier->id }}</td>
 										<td>{{ $supplier->name }}</td>
 										<td>{{ $supplier->address1 }}</td>
+										<td>{{ $supplier->president }}</td>
 										<td>
 											<!-- BTN: delete -->
 											{{ Form::button('<i class="fa fa-trash"></i> &nbsp; Delete', [
