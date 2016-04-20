@@ -39,18 +39,7 @@
 			<li id='employees'><a href="{{ url('/employee') }}"><i class="fa fa-users"></i> <span>Employees</span> </a></li>
 			<li id='purchase_order'><a href="{{ url('/purchase') }}"><i class="fa fa-folder"></i> <span>Purchase Order</span> </a></li>
 			<li id='purchase_order_details'><a href="{{ url('/po_details') }}"><i class="fa fa-folder"></i> <span>Purchase Order Details</span> </a></li>
-			<li id='admin'>
-				<a href="#"><i class="fa fa-gear"></i><span>Administration</span><i class="fa fa-angle-left pull-right"></i></a>
-				<ul class="treeview-menu">
-					<li id='user-manager'><a href="{{ url('admin/user/manager') }}"><i class="fa fa-caret-right"></i>User Manager</a></li>
-					<li id='system-settings'><a href="{{ url('/') }}"><i class="fa fa-caret-right"></i> <span>System Settings</span> </a></li>
-					<li id='sysmod-manager'><a href="{{ url('/') }}"><i class="fa fa-caret-right"></i> <span>Sysmod Manager</span> </a></li>
-					<li id='issues-manager'><a href="{{ url('/') }}"><i class="fa fa-caret-right"></i> <span>Issues Manager</span> </a></li>
-					<li id='faq-manager'><a href="{{ url('/') }}"><i class="fa fa-caret-right"></i> <span>FAQ Manager</span> </a></li>
-					<li id='userman-manager'><a href="{{ url('/') }}"><i class="fa fa-caret-right"></i> <span>User Manual Manager</span> </a></li>
-					<li id='logs'><a href="{{ url('/') }}"><i class="fa fa-caret-right"></i> <span>Logs</span> </a></li>
-				</ul>
-			</li>
+			<li id='user-manager'><a href="{{ url('/user-manager') }}"><i class="fa fa-users"></i> <span>User Manager</span> </a></li>
 			<li><a href="{{ url('bower_components/adminlte/index.html') }}"><i class="fa fa-link"></i> <span>AdminLTE Template</span></a></li>
 
 		</ul>

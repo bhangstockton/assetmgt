@@ -160,6 +160,10 @@ desired effect
 		//     $('#myTab a[href="#tab_' + page_activetab + '"]').tab('show')
 		// }
 
+		//Process Active Tabs
+		var page_activetab = $('#page_activetab').val();
+		$('#amstab a[href="#tc_' + page_activetab + '"]').tab('show')
+		
 		// Checkbox and Radio Inputs
 		// -------------------------
 
@@ -174,9 +178,7 @@ desired effect
 			radioClass: 'iradio_square-blue'
 		});
 
-		//Process Active Tabs
-		var page_activetab = $('#page_activetab').val();
-		$('#amstab a[href="#tc_' + page_activetab + '"]').tab('show')
+
 	});
 </script>
 
