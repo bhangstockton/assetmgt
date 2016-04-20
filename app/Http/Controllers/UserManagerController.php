@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\User;
+use Auth;
 
 class UserManagerController extends Controller
 {
@@ -16,8 +17,6 @@ class UserManagerController extends Controller
      */
     public function index(Request $request)
     {
-        $request->session()->flash('currtab','new');
-
         $data['users'] = User::orderBy('id','desc')->get();
         return view('usermanager', $data);
     }
@@ -40,7 +39,21 @@ class UserManagerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Set Current Tab
+        $request->session()->flash('currtab','new');
+
+        $this->validate($request, [
+            'name' => 'required|max:45|',
+            'email' => 'required',
+        ]);
+
+        $user = new User;
+        $user->name = title_case($request->name);
+        $user->email = $request->email;
+        $user->password = bcrypt($request->password);
+        $user->createdby = Auth::user()->name;
+        $user->save();
+
     }
 
     /**
@@ -51,7 +64,8 @@ class UserManagerController extends Controller
      */
     public function show($id)
     {
-        //
+        $data['user'] = User::find($id);
+        return view('userProfile',$data);
     }
 
     /**

@@ -37,6 +37,7 @@
 						            <td style="border-top: 0px !important;"><b>#</b></td>
 						            <td style="border-top: 0px !important;"><b>Name</b></td>
 						            <td style="border-top: 0px !important;"><b>Email</b></td>
+						            <td style="border-top: 0px !important;" class="text-center"><b><i class="fa fa-bolt"></i> </b></td>
 						        </tr>
 						        <!-- rows -->
 						        @foreach ($users as $user)
@@ -44,6 +45,15 @@
 						        		<td>{{ $user->id }}</td>
 						        		<td>{{ $user->name }}</td>
 						        		<td>{{ $user->email }}</td>
+						        		<td class='text-center'>
+						        			<!-- View Profile Button -->
+						        			<!-- BTN:  -->
+						        			{{ Form::button('<i class="fa fa-eye"></i> &nbsp; View Profile', [
+						        				'onclick' => "location.href='". url('/user-manager/'. $user->id)."'",
+						        			    "class" => "btn btn-primary btn-xs",
+						        			]) }}
+						        			<!-- BTN: / -->
+						        		</td>
 						        	</tr>
 						        @endforeach
 						    </table>
@@ -67,7 +77,29 @@
 							    ]) }}
 							    {!! $errors->first('name', '<code>:message</code>') !!}
 							</div>
-						
+							<!-- TEXT: Email Address -->
+							<div class='form-group'>
+							    {{ Form::email('email', '',[
+							        'class' => 'form-control',
+							        'placeholder' => 'Email Address',
+							    ]) }}
+							    {!! $errors->first('email', '<code>:message</code>') !!}
+							</div>
+							<!-- TEXT: Initial Password -->
+							<div class='form-group'>
+							    {{ Form::label('Initial Password') }} <small>System Generated</small> <br>
+							    {{ $pass = str_random(6) }}
+							    {{ Form::hidden('password', $pass, [
+							        'class' => 'form-control',
+							    ]) }}
+							</div>
+							<!-- Submit -->
+							{{ Form::button('<i class="fa fa-check"></i> &nbsp; Submit', [
+							    "class" => "btn btn-primary",
+							    "id"	=> "submit",
+							    "type"  => "submit",
+							]) }}
+							<!-- /Submit -->
 						{{ Form::close() }}
 						<!-- FORM:  -->
 					</div>
