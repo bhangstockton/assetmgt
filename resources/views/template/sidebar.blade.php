@@ -34,12 +34,13 @@
 		<ul class="sidebar-menu">
 			<!-- Optionally, you can add icons to the links -->
 			<li id='dashboard'><a href="{{ url('/') }}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
-			<li id='supplier'><a href="{{ url('/supplier') }}"><i class="fa fa-truck"></i> <span>Supplier</span> </a></li>
+			<li id='supplier'><a href="{{ url('/supplier') }}"><i class="fa fa-tty"></i> <span>Supplier</span> </a></li>
 			<li id='offices'><a href="{{ url('/office') }}"><i class="fa fa-institution"></i> <span>Offices</span> </a></li>
 			<li id='employees'><a href="{{ url('/employee') }}"><i class="fa fa-users"></i> <span>Employees</span> </a></li>
 			<li id='purchase_order'><a href="{{ url('/purchase') }}"><i class="fa fa-folder"></i> <span>Purchase Order</span> </a></li>
 			<li id='purchase_order_details'><a href="{{ url('/po_details') }}"><i class="fa fa-folder"></i> <span>Purchase Order Details</span> </a></li>
 			<li id='user-manager'><a href="{{ url('/user-manager') }}"><i class="fa fa-users"></i> <span>User Manager</span> </a></li>
+			<li id='brand'><a href="{{ url('/brand') }}"><i class="fa fa-users"></i> <span>Brands</span> </a></li>
 			<li><a href="{{ url('bower_components/adminlte/index.html') }}"><i class="fa fa-link"></i> <span>AdminLTE Template</span></a></li>
 
 		</ul>
