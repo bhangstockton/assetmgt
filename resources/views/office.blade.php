@@ -43,10 +43,10 @@
                                 <tr>
                                     <td style="border-top: 0px !important;"><b>ID</b></td>
                                     <td style="border-top: 0px !important;"><b>Office Name</b></td>
-                                    <td style="border-top: 0px !important;"><b>address</b></td>
-                                    <td style="border-top: 0px !important;"><b>building</b></td>
-                                    <td style="border-top: 0px !important;"><b>floor</b></td>
-                                    <td style="border-top: 0px !important;"><b>station</b></td>
+                                    <td style="border-top: 0px !important;"><b>Address</b></td>
+                                    <td style="border-top: 0px !important;"><b>Building</b></td>
+                                    <td style="border-top: 0px !important;"><b>Floor</b></td>
+                                    <td style="border-top: 0px !important;"><b>Station</b></td>
                                     <td class='text-center' style="width: 7%; border-top: 0px !important;"><b><i class="fa fa-bolt"></i> </b></td>
                                 </tr>
                                 <!-- rows -->
