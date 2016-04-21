@@ -61,10 +61,3 @@ $factory->define(App\Brand::class, function (Faker\Generator $faker) {
         'name' => $faker->word,
     ];
 });
-
-// Inventory
-$factory->define(App\Inventory_item::class, function (Faker\Generator $faker) {
-    return [
-        'name' => $faker->word,
-    ];
-});
