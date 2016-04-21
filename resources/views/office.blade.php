@@ -43,6 +43,10 @@
                                 <tr>
                                     <td style="border-top: 0px !important;"><b>ID</b></td>
                                     <td style="border-top: 0px !important;"><b>Office Name</b></td>
+                                    <td style="border-top: 0px !important;"><b>address</b></td>
+                                    <td style="border-top: 0px !important;"><b>building</b></td>
+                                    <td style="border-top: 0px !important;"><b>floor</b></td>
+                                    <td style="border-top: 0px !important;"><b>station</b></td>
                                     <td class='text-center' style="width: 7%; border-top: 0px !important;"><b><i class="fa fa-bolt"></i> </b></td>
                                 </tr>
                                 <!-- rows -->
@@ -50,6 +54,10 @@
                                     <tr>
                                         <td>{{ $office->id }}</td>
                                         <td>{{ $office->office_name }}</td>
+                                        <td>{{ $office->address }}</td>
+                                        <td>{{ $office->building }}</td>
+                                        <td>{{ $office->floor }}</td>
+                                        <td>{{ $office->station }}</td>                                        
                                         <td>
                                             <!-- BTN: /delete -->
                                             {{ Form::button('<i class="fa fa-trash"></i> &nbsp; Delete', [
@@ -134,7 +142,7 @@
                             "id"    => "submit",
                             "type"  => "submit",
                         ]) }}
-                        <!-- /Add Supplier -->
+                        <!-- /Add Office -->
                     </div>
                     <!-- /.tab-pane -->
                 </div>
