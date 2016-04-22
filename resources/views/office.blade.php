@@ -45,6 +45,10 @@
                                 <tr>
                                     <td style="border-top: 0px !important;"><b>ID</b></td>
                                     <td style="border-top: 0px !important;"><b>Office Name</b></td>
+                                    <td style="border-top: 0px !important;"><b>Address</b></td>
+                                    <td style="border-top: 0px !important;"><b>Building</b></td>
+                                    <td style="border-top: 0px !important;"><b>Floor</b></td>
+                                    <td style="border-top: 0px !important;"><b>Station</b></td>
                                     <td class='text-center' style="width: 7%; border-top: 0px !important;"><b><i class="fa fa-bolt"></i> </b></td>
                                 </tr>
                                 <!-- rows -->
@@ -52,13 +56,10 @@
                                     <tr>
                                         <td>{{ $office->id }}</td>
                                         <td>{{ $office->office_name }}</td>
-<<<<<<< HEAD
                                         <td>{{ $office->address }}</td>
                                         <td>{{ $office->building }}</td>
                                         <td>{{ $office->floor }}</td>
                                         <td>{{ $office->station }}</td>                                        
-=======
->>>>>>> origin/master
                                         <td>
                                             <!-- BTN: /delete -->
                                             {{ Form::button('<i class="fa fa-trash"></i> &nbsp; Delete', [
@@ -75,6 +76,9 @@
                     </div>
                     <!-- /.tab-pane -->
                     <div id='tc_add_offices' class="tab-pane">
+
+                    <!-- FORM: Add New Office -->
+                        {{ Form::open(array('route' => 'office.store')) }}
                         <!-- TEXT: Office's Name -->
                         <div class='form-group'>
                             {{ Form::label('Office') }}
@@ -93,27 +97,16 @@
                         <div class='form-group'>
                             <div class="row">
 
-                                <!-- TEXT: Contact No. 1 -->
-                                <div class="col-xs-4">
-                                    {{ Form::label('Contact No. 1') }}
-                                    {{ Form::text('contact_1', '',[
-                                        'class' => 'form-control',
-                                        'placeholder' => 'Contact No. 1',
-                                    ]) }}
-                                    {{ $errors->first('contact_1', '<code>:message</code>') }}
-                                </div>
+                                 <!-- TEXTA: Address  -->
+                                    <div class="col-xs-4">
+                                       {{ Form::label('Address ') }}
+                                       {{ Form::textarea('address', '',[
+                                           'class' => 'form-control',
+                                           'placeholder' => 'Address ',
+                                           'rows' => '3',
+                                       ]) }}
+                                       {!! $errors->first('address', '<code>:message</code>') !!}
                                 
-                                <!-- TEXT: Contact No. 2 -->
-                                <div class="col-xs-4">
-                                    {{ Form::label('Contact No. 2') }}
-                                    {{ Form::text('contact_2', '',[
-                                        'class' => 'form-control',
-                                        'placeholder' => 'Contact No. 2',
-                                    ]) }}
-                                    {{ $errors->first('contact_2', '<code>:message</code>') }}
-                                </div>
-                                
-<<<<<<< HEAD
                                <!-- GROUP: Addresses -->
                             <div class='form-group'>
                                 <div class="row">
@@ -145,39 +138,21 @@
                                         ]) }}
                                         {!! $errors->first('station', '<code>:message</code>') !!}
                                     </div>
-=======
-                                <!-- TEXT: Fax No. -->
-                                <div class="col-xs-4">
-                                    {{ Form::label('Fax No.') }}
-                                    {{ Form::text('fax', '',[
-                                        'class' => 'form-control',
-                                        'placeholder' => 'Fax No.',
-                                    ]) }}
-                                    {{ $errors->first('fax', '<code>:message</code>') }}
->>>>>>> origin/master
                                 </div>
-
                             </div>
-                        </div>
-
+                            
                         <!-- ----------------------- -->
-                        <!-- TEXTA: Remarks -->
-                        <div class='form-group'>
-                            {{ Form::label('Remarks') }}
-                            {{ Form::textarea('remarks', '',[
-                                'class' => 'form-control',
-                                'placeholder' => 'Remarks',
-                                'rows' => '3',
-                            ]) }}
-                            {{ $errors->first('remarks', '<code>:message</code>') }}
-                        </div>
+                        
                         <!-- Add Supplier -->
                         {{ Form::button('<i class="fa fa-check"></i> &nbsp; Add Office ', [
                             "class" => "btn btn-primary",
                             "id"    => "submit",
                             "type"  => "submit",
                         ]) }}
-                        <!-- /Add Supplier -->
+                        <!-- /submit -->
+                        
+                        {{ Form::close() }}
+                        <!-- /Add Office -->
                     </div>
                     <!-- /.tab-pane -->
                 </div>
