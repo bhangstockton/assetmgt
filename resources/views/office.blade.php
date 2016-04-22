@@ -53,7 +53,7 @@
                                 @foreach ($offices as $office)
                                     <tr>
                                         <td>{{ $office->id }}</td>
-                                        <td>{{ $office->office_name }}</td>
+                                        <td>{{ $office->office_name .', '. $office->office_name .' '. $office->address .' '. $office->suffix }}</td>
                                         <td>{{ $office->address }}</td>
                                         <td>{{ $office->building }}</td>
                                         <td>{{ $office->floor }}</td>
@@ -74,6 +74,9 @@
                     </div>
                     <!-- /.tab-pane -->
                     <div id='tc_add_offices' class="tab-pane">
+
+                    <!-- FORM: Add New Office -->
+                        {{ Form::open(array('route' => 'office.store')) }}
                         <!-- TEXT: Office's Name -->
                         <div class='form-group'>
                             {{ Form::label('Office') }}
@@ -92,56 +95,61 @@
                         <div class='form-group'>
                             <div class="row">
 
-                                <!-- TEXT: Contact No. 1 -->
-                                <div class="col-xs-4">
-                                    {{ Form::label('Contact No. 1') }}
-                                    {{ Form::text('contact_1', '',[
-                                        'class' => 'form-control',
-                                        'placeholder' => 'Contact No. 1',
-                                    ]) }}
-                                    {{ $errors->first('contact_1', '<code>:message</code>') }}
-                                </div>
+                                 <!-- TEXTA: Address  -->
+                                    <div class="col-xs-4">
+                                       {{ Form::label('Address ') }}
+                                       {{ Form::textarea('address', '',[
+                                           'class' => 'form-control',
+                                           'placeholder' => 'Address ',
+                                           'rows' => '3',
+                                       ]) }}
+                                       {!! $errors->first('address', '<code>:message</code>') !!}
                                 
-                                <!-- TEXT: Contact No. 2 -->
-                                <div class="col-xs-4">
-                                    {{ Form::label('Contact No. 2') }}
-                                    {{ Form::text('contact_2', '',[
-                                        'class' => 'form-control',
-                                        'placeholder' => 'Contact No. 2',
-                                    ]) }}
-                                    {{ $errors->first('contact_2', '<code>:message</code>') }}
+                               <!-- GROUP: Addresses -->
+                            <div class='form-group'>
+                                <div class="row">
+                               
+                                    <!-- TEXT: Contact No. 1 -->
+                                    <div class="col-xs-4">
+                                        {{ Form::label('Building') }}
+                                        {{ Form::text('building', '',[
+                                            'class' => 'form-control',
+                                            'placeholder' => 'Building',
+                                        ]) }}
+                                        {!! $errors->first('building', '<code>:message</code>') !!}
+                                    </div>
+                                    <!-- TEXT: Contact No. 2 -->
+                                    <div class="col-xs-4">
+                                        {{ Form::label('Floor') }}
+                                        {{ Form::text('floor', '',[
+                                            'class' => 'form-control',
+                                            'placeholder' => 'Floor',
+                                        ]) }}
+                                        {{ $errors->first('floor', '<code>:message</code>') }}
+                                    </div>
+                                    <!-- TEXT: Fax No. -->
+                                    <div class="col-xs-4">
+                                        {{ Form::label('Station') }}
+                                        {{ Form::text('fax', '',[
+                                            'class' => 'form-control',
+                                            'placeholder' => 'Station',
+                                        ]) }}
+                                        {{ $errors->first('fax', '<code>:message</code>') }}
+                                    </div>
                                 </div>
-                                
-                                <!-- TEXT: Fax No. -->
-                                <div class="col-xs-4">
-                                    {{ Form::label('Fax No.') }}
-                                    {{ Form::text('fax', '',[
-                                        'class' => 'form-control',
-                                        'placeholder' => 'Fax No.',
-                                    ]) }}
-                                    {{ $errors->first('fax', '<code>:message</code>') }}
-                                </div>
-
                             </div>
-                        </div>
-
+                            
                         <!-- ----------------------- -->
-                        <!-- TEXTA: Remarks -->
-                        <div class='form-group'>
-                            {{ Form::label('Remarks') }}
-                            {{ Form::textarea('remarks', '',[
-                                'class' => 'form-control',
-                                'placeholder' => 'Remarks',
-                                'rows' => '3',
-                            ]) }}
-                            {{ $errors->first('remarks', '<code>:message</code>') }}
-                        </div>
+                        
                         <!-- Add Supplier -->
                         {{ Form::button('<i class="fa fa-check"></i> &nbsp; Add ', [
                             "class" => "btn btn-primary",
                             "id"    => "submit",
                             "type"  => "submit",
                         ]) }}
+                        <!-- /submit -->
+                        
+                        {{ Form::close() }}
                         <!-- /Add Office -->
                     </div>
                     <!-- /.tab-pane -->
