@@ -53,6 +53,7 @@ $factory->define(App\Office::class, function (Faker\Generator $faker) {
     return [
         'office_name' => $faker->company .' Department',
         'address' => $faker->address,
+        'building' => $faker->name,
     ];
 });
 

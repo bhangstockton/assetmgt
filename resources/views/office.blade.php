@@ -15,7 +15,7 @@
 @section('page-ident')
     {{ Form::hidden('page_group_lev1','none',['id' => 'page_group_lev1',]) }}
     {{ Form::hidden('page_group_lev2','none',['id' => 'page_group_lev2',]) }}
-    {{ Form::hidden('page_id','pageid',['id' => 'page_id',]) }}
+    {{ Form::hidden('page_id','Office',['id' => 'page_id',]) }}
 @endsection
 
 @section('breadcrumbs')
@@ -23,6 +23,8 @@
 @stop
 
 @section('content')
+<input id="page_activetab" name="page_activetab" type="hidden" value="{{ Session::get('currtab') ? Session::get('currtab') : 'list' }}">
+
     <div class="row">
         <div class="col-md-12">
             <!-- TABBOX: Information -->
@@ -53,7 +55,7 @@
                                 @foreach ($offices as $office)
                                     <tr>
                                         <td>{{ $office->id }}</td>
-                                        <td>{{ $office->office_name .', '. $office->office_name .' '. $office->address .' '. $office->suffix }}</td>
+                                        <td>{{ $office->office_name }}</td>
                                         <td>{{ $office->address }}</td>
                                         <td>{{ $office->building }}</td>
                                         <td>{{ $office->floor }}</td>
@@ -125,7 +127,7 @@
                                             'class' => 'form-control',
                                             'placeholder' => 'Floor',
                                         ]) }}
-                                        {{ $errors->first('floor', '<code>:message</code>') }}
+                                        {!! $errors->first('floor', '<code>:message</code>') !!}
                                     </div>
                                     <!-- TEXT: Fax No. -->
                                     <div class="col-xs-4">
@@ -134,7 +136,7 @@
                                             'class' => 'form-control',
                                             'placeholder' => 'Station',
                                         ]) }}
-                                        {{ $errors->first('fax', '<code>:message</code>') }}
+                                        {!! $errors->first('station', '<code>:message</code>') !!}
                                     </div>
                                 </div>
                             </div>
@@ -142,7 +144,7 @@
                         <!-- ----------------------- -->
                         
                         <!-- Add Supplier -->
-                        {{ Form::button('<i class="fa fa-check"></i> &nbsp; Add ', [
+                        {{ Form::button('<i class="fa fa-check"></i> &nbsp; Add Office ', [
                             "class" => "btn btn-primary",
                             "id"    => "submit",
                             "type"  => "submit",

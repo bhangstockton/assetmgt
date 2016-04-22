@@ -20,7 +20,7 @@ class OfficesController extends Controller
      */
     public function index()
     {
-        $data['offices'] = Office::all();
+        $data['offices'] = Office::orderBy('id','desc')->get();
         return view('office' , $data);
     }
 
@@ -42,7 +42,33 @@ class OfficesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Set Current Tab
+        $request->session()->flash('currtab', 'new');
+
+        $this->validate($request, [
+            'office_name' => 'required|max:50',
+            'address' => 'required|max:255',
+            'building' => 'required|max:50',
+            'floor' => 'required|max:10',
+            'station' => 'max:20',
+            
+        ]);
+
+        // Validation Success
+        $office = new Office;
+        $office->office_name = title_case($request->office_name);
+        $office->address = title_case($request->address);
+        $office->building = title_case($request->building);
+        $office->floor = title_case($request->floor);
+        $office->station = title_case($request->station);
+        $office->save();
+
+        $request->session()->flash('currtab', 'list');
+        $request->session()->flash('sys_message_success', trans('messages.insert-success-title',['info'=>'Office']));
+        $request->session()->flash('sys_message_content', trans('messages.insert-success-message',['info'=> $office->id ]));
+
+        return redirect()->back();
+        
     }
 
     /**
