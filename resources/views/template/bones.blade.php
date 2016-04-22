@@ -76,7 +76,7 @@ desired effect
 				{{-- Page Header --}}
 				@yield('page-icon')
 				@yield('page-title')
-				<small>@yield('sysmod-title')</small>
+				<small>@yield('page-description')</small>
 			</h1>
 			<ol class="breadcrumb">
 				<li><a href="{{ url('/') }}"><i class="fa fa-dashboard"></i> Home</a></li>

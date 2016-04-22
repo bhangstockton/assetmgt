@@ -63,6 +63,10 @@
 }
 
 /* OVERRIDES */
+.navbar-nav > .user-menu .user-image {
+	border-radius: 0;
+}
+
 .sidebar-menu .treeview-menu > li > a {
 	padding-left: 36px;
 }
