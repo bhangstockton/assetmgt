@@ -32,7 +32,6 @@
 		        </div>
 		        <div class="box-body">
 		            The body of the box
-		            <img src="{{ Identicon::getImageDataUri(Auth::user()->email) }}" alt="bar Identicon" />
 		        </div>
 		        <div class="box-footer">
 		           

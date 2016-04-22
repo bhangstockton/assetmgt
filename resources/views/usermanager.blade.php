@@ -35,7 +35,6 @@
 						    	<!-- headers -->
 						        <tr>
 						            <td style="border-top: 0px !important;"><b>#</b></td>
-						            <td style="border-top: 0px !important;"><b>Identicon</b></td>
 						            <td style="border-top: 0px !important;"><b>Name</b></td>
 						            <td style="border-top: 0px !important;"><b>Email</b></td>
 						            <td style="border-top: 0px !important;" class="text-center"><b><i class="fa fa-bolt"></i> </b></td>
@@ -44,7 +43,6 @@
 						        @foreach ($users as $user)
 						        	<tr>
 						        		<td>{{ $user->id }}</td>
-						        		<td><img src="{{ Identicon::getImageDataUri($user->email) }}" width="20" alt="User Image"></td>
 						        		<td>{{ $user->name }}</td>
 						        		<td>{{ $user->email }}</td>
 						        		<td class='text-center'>

@@ -1,11 +1,11 @@
 @extends('template.bones')
 
 @section('page-title')
-    User Profile 
+    User Profile <small>{{ $user->email }}</small>
 @endsection
 
 @section('page-description')
-	{{ $user->email }}
+	jdsj
 @stop
 
 @section('page-ident')

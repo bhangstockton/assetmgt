@@ -157,7 +157,6 @@ return [
         App\Providers\RouteServiceProvider::class,
         Zizaco\Entrust\EntrustServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
-        Irazasyed\LaravelIdenticon\ServiceProvider::class,
 
     ],
 
@@ -207,7 +206,7 @@ return [
         'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
-        'Identicon'  => Irazasyed\LaravelIdenticon\Facade::class,
+
     ],
 
 ];
