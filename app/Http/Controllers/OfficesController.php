@@ -43,14 +43,16 @@ class OfficesController extends Controller
     public function store(Request $request)
     {
         // Set Current Tab
-        $request->session()->flash('currtab', 'new');
+        $request->session()->flash('currtab', 'add_offices');
+
+        // Validation Rules
 
         $this->validate($request, [
-            'office_name' => 'required|max:50',
+            'office_name' => 'required|max:255',
             'address' => 'required|max:255',
             'building' => 'required|max:50',
             'floor' => 'required|max:10',
-            'station' => 'max:20',
+            'station' => 'required|max:20',
             
         ]);
 

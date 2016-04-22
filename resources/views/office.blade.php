@@ -28,7 +28,7 @@
     <div class="row">
         <div class="col-md-12">
             <!-- TABBOX: Information -->
-            <div class="nav-tabs-custom">
+            <div class="nav-tabs-custom" id="amstab">
                 <!-- Nav Tabs -->
                 <ul class="nav nav-tabs">
                     <li id='tn_list' class="active"><a href="#tc_list" data-toggle="tab">List</a></li>
@@ -86,7 +86,7 @@
                                 'class' => 'form-control',
                                 'placeholder' => 'Office Name',
                             ]) }}
-                            {{ $errors->first('name', '<code>:message</code>') }}
+                            {!! $errors->first('office_name', '<code>:message</code>') !!}
                         </div>
                         <!-- --------------- -->
                         <!-- TEXT: Address 1 -->
