@@ -20,7 +20,7 @@ class OfficesController extends Controller
      */
     public function index()
     {
-        $data['offices'] = Office::orderBy('id','desc')->get();
+        $data['offices'] = Office::all();
         return view('office' , $data);
     }
 
@@ -52,7 +52,7 @@ class OfficesController extends Controller
             'address' => 'required|max:255',
             'building' => 'required|max:20',
             'floor' => 'required|max:10',
-            'station' => 'max:15',
+            'station' => 'required|max:15',
             
         ]);
 
