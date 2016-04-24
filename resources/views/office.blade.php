@@ -82,15 +82,13 @@
                         <!-- TEXT: Office's Name -->
                         <div class='form-group'>
                             {{ Form::label('Office') }}
-                            {{ Form::text('name', '',[
+                            {{ Form::text('office_name', '',[
                                 'class' => 'form-control',
                                 'placeholder' => 'Office Name',
                             ]) }}
                             {!! $errors->first('office_name', '<code>:message</code>') !!}
                         </div>
                         <!-- --------------- -->
-                        <!-- TEXT: Address 1 -->
-                       
 
                         <!-- ------------------- -->
                         <!-- ------------------- -->
@@ -111,7 +109,7 @@
                             <div class='form-group'>
                                 <div class="row">
                                
-                                    <!-- TEXT: Contact No. 1 -->
+                                    <!-- TEXT: Building -->
                                     <div class="col-xs-4">
                                         {{ Form::label('Building') }}
                                         {{ Form::text('building', '',[
@@ -120,7 +118,7 @@
                                         ]) }}
                                         {!! $errors->first('building', '<code>:message</code>') !!}
                                     </div>
-                                    <!-- TEXT: Contact No. 2 -->
+                                    <!-- TEXT: Floor -->
                                     <div class="col-xs-4">
                                         {{ Form::label('Floor') }}
                                         {{ Form::text('floor', '',[
@@ -129,10 +127,10 @@
                                         ]) }}
                                         {!! $errors->first('floor', '<code>:message</code>') !!}
                                     </div>
-                                    <!-- TEXT: Fax No. -->
+                                    <!-- TEXT: Station. -->
                                     <div class="col-xs-4">
                                         {{ Form::label('Station') }}
-                                        {{ Form::text('fax', '',[
+                                        {{ Form::text('station', '',[
                                             'class' => 'form-control',
                                             'placeholder' => 'Station',
                                         ]) }}

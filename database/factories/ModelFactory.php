@@ -52,12 +52,10 @@ $factory->defineAs(App\Employee::class, 'male', function (Faker\Generator $faker
 $factory->define(App\Office::class, function (Faker\Generator $faker) {
     return [
         'office_name' => $faker->company .' Department',
-<<<<<<< HEAD
+
         'address' => $faker->address,
         'building' => $faker->name,
-=======
->>>>>>> origin/master
-    ];
+        ];
 });
 
 // BRAND
