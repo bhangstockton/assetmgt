@@ -33,6 +33,7 @@
 <body class="hold-transition login-page">
 
 	@yield('content')
+	<input name="_token" type="hidden" value="{!! csrf_token() !!}" />
 
 	<!-- REQUIRED JS SCRIPTS -->
 
