@@ -55,7 +55,11 @@ $factory->define(App\Office::class, function (Faker\Generator $faker) {
 
         'address' => $faker->address,
         'building' => $faker->name,
+<<<<<<< HEAD
         ];
+=======
+        ]);
+>>>>>>> origin/master
 });
 
 // BRAND

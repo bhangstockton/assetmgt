@@ -109,7 +109,11 @@
                             <div class='form-group'>
                                 <div class="row">
                                
+<<<<<<< HEAD
                                     <!-- TEXT: Building -->
+=======
+                                    <!-- TEXT: bulding -->
+>>>>>>> origin/master
                                     <div class="col-xs-4">
                                         {{ Form::label('Building') }}
                                         {{ Form::text('building', '',[
@@ -127,7 +131,11 @@
                                         ]) }}
                                         {!! $errors->first('floor', '<code>:message</code>') !!}
                                     </div>
+<<<<<<< HEAD
                                     <!-- TEXT: Station. -->
+=======
+                                    <!-- TEXT: Station -->
+>>>>>>> origin/master
                                     <div class="col-xs-4">
                                         {{ Form::label('Station') }}
                                         {{ Form::text('station', '',[

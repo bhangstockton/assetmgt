@@ -23,3 +23,4 @@ Route::resource('/purchase','PurchaseController');
 Route::resource('/po_details', 'PODetailsController');
 Route::resource('/user-manager', 'UserManagerController');
 Route::resource('/brand', 'BrandController');
+

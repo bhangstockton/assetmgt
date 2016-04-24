@@ -50,7 +50,7 @@ class OfficesController extends Controller
         $this->validate($request, [
             'office_name' => 'required|max:50',
             'address' => 'required|max:255',
-            'building' => 'required|max:50',
+            'building' => 'required|max:20',
             'floor' => 'required|max:10',
             'station' => 'required|max:15',
             

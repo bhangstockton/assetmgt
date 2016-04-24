@@ -1,0 +1,17 @@
+{
+  "name": "assetmgt",
+  "description": "",
+  "main": "",
+  "authors": [
+    "d3nn1s29 <denniscarlos29@yahoo.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/bhangstockton/assetmgt",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
