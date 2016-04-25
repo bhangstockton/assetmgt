@@ -7,7 +7,7 @@
 		<!-- Sidebar user panel (optional) -->
 		<div class="user-panel">
 			<div class="pull-left image">
-				<img src="{{ asset('bower_components/adminlte/dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
+				<img src="{{ Identicon::getImageDataUri(Auth::user()->email) }}" alt="User Identicon" />
 			</div>
 			<div class="pull-left info">
 				<p>{{ 'something' }}</p>

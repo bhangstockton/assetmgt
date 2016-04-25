@@ -54,6 +54,12 @@ class UserManagerController extends Controller
         $user->createdby = Auth::user()->name;
         $user->save();
 
+        // Set Current Tab
+        $request->session()->flash('currtab','list');
+        $request->session()->flash('sys_message_success', trans('messages.insert-success-title',['info'=>'User']));
+        $request->session()->flash('sys_message_content', trans('messages.insert-success-message',['info'=> $user->id ]));
+
+        return redirect()->back();
     }
 
     /**

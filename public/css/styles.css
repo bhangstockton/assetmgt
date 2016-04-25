@@ -88,3 +88,7 @@
 body {
 	color: #676A6C !important;
 }
+
+.navbar-nav > .user-menu .user-image {
+	border-radius: 0;
+}
